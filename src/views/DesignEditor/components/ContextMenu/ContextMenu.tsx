@@ -80,7 +80,9 @@ const ContextMenu = () => {
     <>
       {!contextMenuRequest.target.locked ? (
         <div // @ts-ignore
+        
           onContextMenu={(e: Event) => e.preventDefault()}
+          className="main-canva-naresh"
           style={{
             position: "absolute",
             top: `${contextMenuRequest.top}px`,

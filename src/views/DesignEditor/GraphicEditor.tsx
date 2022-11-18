@@ -8,6 +8,7 @@ import ContextMenu from "./components/ContextMenu"
 
 const GraphicEditor = () => {
   return (
+    
     <EditorContainer>
       <Navbar />
       <div style={{ display: "flex", flex: 1 }}>

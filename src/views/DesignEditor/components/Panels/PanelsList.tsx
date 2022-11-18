@@ -19,18 +19,27 @@ const PanelsList = () => {
   const { t } = useTranslation("editor")
   const editorType = useEditorType()
   const PANEL_ITEMS = editorType === "VIDEO" ? VIDEO_PANEL_ITEMS : BASE_ITEMS
+  console.log(PANEL_ITEMS)
+  const { setActivePanel } = useAppContext()
+  const setIsSidebarOpen = useSetIsSidebarOpen()
+  const [css, theme] = useStyletron()
+  const temp = 'temp'
+  const Icon = Icons["Temp"]
+
+
   return (
     <Container>
       <Scrollable autoHide={true}>
         {PANEL_ITEMS.map((panelListItem) => (
           <PanelListItem
-            label={t(`panels.panelsList.${panelListItem.id}`)}
+            label={panelListItem.id}
             name={panelListItem.name}
             key={panelListItem.name}
             icon={panelListItem.name}
             activePanel={activePanel}
           />
         ))}
+    
       </Scrollable>
     </Container>
   )
@@ -42,7 +51,9 @@ const PanelListItem = ({ label, icon, activePanel, name }: any) => {
   const [css, theme] = useStyletron()
   // @ts-ignore
   const Icon = Icons[icon]
+  console.log(label)
   return (
+    <>
     <Block
       id="EditorPanelList"
       onClick={() => {
@@ -72,7 +83,12 @@ const PanelListItem = ({ label, icon, activePanel, name }: any) => {
     >
       <Icon size={24} />
       <div>{label}</div>
+
+      
     </Block>
+
+
+    </>
   )
 }
 

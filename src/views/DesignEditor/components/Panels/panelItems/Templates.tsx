@@ -1,4 +1,5 @@
 import React from "react"
+
 import { useEditor } from "@layerhub-io/react"
 import { Block } from "baseui/block"
 import { loadFonts, loadTemplateFonts } from "~/utils/fonts"
@@ -17,13 +18,16 @@ import api from "~/services/api"
 import useEditorType from "~/hooks/useEditorType"
 
 const Templates = () => {
+  // console.log(IDesign)
   const editor = useEditor()
   
   const setIsSidebarOpen = useSetIsSidebarOpen()
   const { setCurrentScene, currentScene, setScenes, setCurrentDesign } = useDesignEditorContext()
   const designs = useSelector(selectPublicDesigns);
+ 
   const editorType = useEditorType()
-
+  console.log(editor)
+// editor.canvas.canvas.height = 1000
   const loadTemplate = React.useCallback(
     async (template: any) => {
       if (editor) {  
@@ -72,8 +76,10 @@ const Templates = () => {
   const loadDesignById = React.useCallback(
     async (designId: string) => {
       if (editor) {
+   
         const design = await api.getPublicDesignById(designId)
         const loadedDesign = await loadGraphicTemplate(design)
+        console.warn(design)
         setScenes(loadedDesign.scenes)
         setCurrentScene(loadedDesign.scenes[0])
         setCurrentDesign(loadedDesign.design)
@@ -105,6 +111,7 @@ const Templates = () => {
           {designs
               .filter((d) => d.type === editorType)
               .map((design, index) => {
+   
                 return (
                   <ImageItem
                     onClick={() => loadDesignById(design.id)}
@@ -121,6 +128,7 @@ const Templates = () => {
 }
 
 function ImageItem({ preview, onClick }: { preview: any; onClick?: (option: any) => void }) {
+  console.log(preview)
   const [css] = useStyletron()
   return (
     <div

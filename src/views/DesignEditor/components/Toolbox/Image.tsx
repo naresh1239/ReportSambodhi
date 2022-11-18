@@ -14,6 +14,7 @@ const Image = () => {
       }}
     >
       <Block>
+
         <Flip />
       </Block>
       <Common />

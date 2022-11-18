@@ -2,6 +2,9 @@
     user-select: none;
 }
 
+:root {
+    --height: 100px;
+  }
 .react-colorful__saturation-pointer {
     width: 20px !important;
     height: 20px !important;
@@ -39,4 +42,14 @@ input[type="number"] {
 
 .react-player video {
     max-height: 740px;
+}
+canvas#layerhub_io_canvas{
+    /* padding:  var(--height) !important;  */
+    /* width: var(--height) !important; */
+   /* background-color: red; */
+}
+.canvas-container{
+
+     overflow: scroll; 
+    
 }

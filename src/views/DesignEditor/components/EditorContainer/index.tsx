@@ -4,6 +4,7 @@ import { Block } from "baseui/block"
 const EditorContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <Block
+    className="naresh"
       $style={{
         width: "100vw",
         height: "100vh",

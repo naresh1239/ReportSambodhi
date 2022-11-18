@@ -7,6 +7,7 @@ export const BASE_ITEMS = [
     id: "customize",
     name: "Customize",
   },
+  
   {
     id: "elements",
     name: "Elements",
@@ -35,6 +36,10 @@ export const BASE_ITEMS = [
   {
     id: "layers",
     name: "Layers",
+  },
+  {
+    id: "temp",
+    name: "Temp",
   },
 ]
 

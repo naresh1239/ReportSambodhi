@@ -33,8 +33,23 @@ const Common = () => {
   }, [zoomRatio])
 
   const handleChange = (type: string, value: any) => {
+  let data =   document.getElementById("layerhub_io_canvas")
+  var r = document.querySelector(':root');
+ 
+ console.warn(r)
+
+
+    // Get the styles (properties and values) for the root
+    var rs = getComputedStyle(r);
+    // Alert the value of the --blue variable
+
+    r.style.setProperty('--height', value * 10 + "px");
+    console.log("The value of --blue is: " + rs.getPropertyValue('--height'))
+     console.log(value * 10)
+
     if (value < 0) {
       editor.zoom.zoomToRatio(zoomMin / 100)
+   
     } else if (value > zoomMax) {
       editor.zoom.zoomToRatio(zoomMax / 100)
     } else {

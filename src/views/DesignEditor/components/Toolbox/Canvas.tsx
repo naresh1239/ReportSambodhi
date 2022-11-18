@@ -5,6 +5,7 @@ import useAppContext from "~/hooks/useAppContext"
 import { useActiveObject, useEditor } from "@layerhub-io/react"
 
 const Canvas = () => {
+  const [hieght, sethieght] = React.useState('400px')
   const [state, setState] = React.useState({ fill: "#000000" })
   const { setActiveSubMenu } = useAppContext()
   const editor = useEditor()
@@ -47,7 +48,7 @@ const Canvas = () => {
           alignItems: "center",
         }}
       >
-        <Block onClick={() => setActiveSubMenu("CanvasFill")}>
+        <Block className="main-canva" onClick={() => setActiveSubMenu("CanvasFill")}>
           <Block
             $style={{
               height: "24px",

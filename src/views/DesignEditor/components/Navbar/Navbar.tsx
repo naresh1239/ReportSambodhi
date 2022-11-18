@@ -263,8 +263,10 @@ const Navbar = () => {
     <ThemeProvider theme={DarkTheme}>
       <Container>
         <div style={{ color: "#ffffff" }}>
-          <Logo size={36} />
+          {/* <Logo size={36} /> */}
+    <h3>      SurveyPoint</h3>
         </div>
+   
         <DesignTitle />
         <Block $style={{ display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
           <input
@@ -319,22 +321,8 @@ const Navbar = () => {
             <Play size={24} />
           </Button>
 
-          <Button
-            size="compact"
-            onClick={() => window.location.replace("https://github.com/layerhub-io/react-design-editor")}
-            kind={KIND.tertiary}
-          >
-            <Github size={24} />
-          </Button>
+      
 
-          <Button
-            style={{ marginLeft: "0.5rem" }}
-            size="compact"
-            onClick={() => window.location.replace("https://editor.layerhub.io")}
-            kind={KIND.primary}
-          >
-            Try PRO
-          </Button>
         </Block>
       </Container>
     </ThemeProvider>

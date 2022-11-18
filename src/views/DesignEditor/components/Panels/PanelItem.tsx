@@ -3,11 +3,13 @@ import useAppContext from "~/hooks/useAppContext"
 import panelItems from "./panelItems"
 import useIsSidebarOpen from "~/hooks/useIsSidebarOpen"
 import { Block } from "baseui/block"
+import Temp from "./panelItems/Temp"
 
 interface State {
   panel: string
 }
 const PanelsList = () => {
+  
   const [state, setState] = React.useState<State>({ panel: "Text" })
   const isSidebarOpen = useIsSidebarOpen()
   const { activePanel, activeSubMenu } = useAppContext()
@@ -27,7 +29,9 @@ const PanelsList = () => {
   // @ts-ignore
   const Component = panelItems[state.panel]
 
+  console.log({Component})
   return (
+    <>
     <Block
       id="EditorPanelItem"
       $style={{
@@ -41,7 +45,11 @@ const PanelsList = () => {
       }}
     >
       {Component && <Component />}
+      {Component == undefined ? <Temp/> : ""}
     </Block>
+    
+  
+    </>
   )
 }
 

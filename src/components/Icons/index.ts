@@ -4,6 +4,7 @@ import Text from "./Text"
 import Templates from "./Templates"
 import Search from "./Search"
 import Images from "./Images"
+import Temp from "./Temp"
 import Graphics from "./Graphics"
 import Pixabay from "./Pixabay"
 import Uploads from "./Uploads"
@@ -32,6 +33,7 @@ class Icons {
   static Search = Search
   static Images = Images
   static Videos = Video
+  static Temp = Temp
   static Graphics = Graphics
   static Pixabay = Pixabay
   static Uploads = Uploads

@@ -17,6 +17,7 @@ interface IAppContext {
   setActiveSubMenu: (option: string) => void
   currentTemplate: any
   setCurrentTemplate: any
+   setTemp : any
 }
 
 export const AppContext = createContext<IAppContext>({
@@ -25,6 +26,7 @@ export const AppContext = createContext<IAppContext>({
   templates: [],
   setTemplates: () => {},
   uploads: [],
+  setTemp: () => {},
   setUploads: () => {},
   shapes: [],
   setShapes: () => {},
